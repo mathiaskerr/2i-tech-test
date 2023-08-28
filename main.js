@@ -20,8 +20,8 @@
 // Array: [1, 1, 10, 32, 41]
 // Output: 2
 
-eg = [1, 1, 10, 32, 41]
-y = 42;
+ const myArray = [1, 1, 10, 32, 41]
+const number = 42;
 
 function findSumOfPairs(arr, target) {
   count = 0;
@@ -36,15 +36,17 @@ function findSumOfPairs(arr, target) {
       numbers.splice(index, 1);
       count++;
     } else {
-
       numbers.push(currentNumber);
     }
   }
-  console.log(numbers)
-
   return count;
 }
 
-console.log(findSumOfPairs(eg, y));
+console.log(findSumOfPairs(myArray, number));
+
+// taking the assumption that an actual array and number is being passed into the function. 
+// I did not have time to write any actual tests but I did use a lot of logging to the console to see how I was manipulating the arrays
+//The function iterates over the array passed in and finds the value needed to add up to the target value passed in. If that value is not in the array "numbers", the "currentNumber" is then added to that array.
+//If the value is in the numbers array, then the count of pairs goes up and that value is removed from the numbers array. this insures the values can only be used in one pairing.
 
 
